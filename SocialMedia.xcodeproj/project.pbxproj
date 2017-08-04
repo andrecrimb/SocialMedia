@@ -35,6 +35,7 @@
 		5443EB6D1F340CBF00F8F99F /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		5443EB711F340DDA00F8F99F /* TimelineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVC.swift; sourceTree = "<group>"; };
 		5443EB731F340E1200F8F99F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		5443EB751F34379E00F8F99F /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
 		545AB22B1F315B5C006302B6 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545AB22E1F315B5C006302B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		545AB2301F315B5C006302B6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		545AB22D1F315B5C006302B6 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				5443EB751F34379E00F8F99F /* SocialMedia.entitlements */,
 				5443EB601F339E5B00F8F99F /* Resources */,
 				5443EB5F1F3180D000F8F99F /* Controller */,
 				5443EB5E1F3180CB00F8F99F /* View */,
@@ -187,6 +189,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = K27EE7EUGC;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -409,6 +416,7 @@
 			baseConfigurationReference = D0F0EAC7BCD6D8D369CE3AEC /* Pods-SocialMedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
 				DEVELOPMENT_TEAM = K27EE7EUGC;
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -423,6 +431,7 @@
 			baseConfigurationReference = EFC39B43EADC3586EBD99790 /* Pods-SocialMedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
 				DEVELOPMENT_TEAM = K27EE7EUGC;
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

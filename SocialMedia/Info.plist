@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Grender</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +22,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Comfortaa-Bold.ttf</string>
+		<string>Comfortaa-Light.ttf</string>
+		<string>Comfortaa-Regular.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -32,11 +40,27 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Comfortaa-Bold.ttf</string>
-		<string>Comfortaa-Light.ttf</string>
-		<string>Comfortaa-Regular.ttf</string>
-	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb327521744367292</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>327521744367292</string>
+    <key>FacebookDisplayName</key>
+    <string>Grender</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We wanna know more about you</string>
 </dict>
 </plist>
