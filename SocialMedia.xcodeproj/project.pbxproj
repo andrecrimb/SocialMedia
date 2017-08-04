@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1F6E12786DEA1832A296616D /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7485E117176CFAFDD47E8666 /* Pods_SocialMedia.framework */; };
+		5443EB641F339ECF00F8F99F /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5443EB611F339ECF00F8F99F /* Comfortaa-Bold.ttf */; };
+		5443EB651F339ECF00F8F99F /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5443EB621F339ECF00F8F99F /* Comfortaa-Light.ttf */; };
+		5443EB661F339ECF00F8F99F /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5443EB631F339ECF00F8F99F /* Comfortaa-Regular.ttf */; };
+		5443EB681F33C0FE00F8F99F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443EB671F33C0FE00F8F99F /* RoundedButton.swift */; };
+		5443EB6A1F3409D300F8F99F /* RoundedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443EB691F3409D300F8F99F /* RoundedTVC.swift */; };
+		5443EB6C1F340B6600F8F99F /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443EB6B1F340B6600F8F99F /* NewPostVC.swift */; };
+		5443EB6E1F340CBF00F8F99F /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443EB6D1F340CBF00F8F99F /* PostCell.swift */; };
+		5443EB721F340DDA00F8F99F /* TimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443EB711F340DDA00F8F99F /* TimelineVC.swift */; };
+		5443EB741F340E1200F8F99F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443EB731F340E1200F8F99F /* Post.swift */; };
 		545AB22F1F315B5C006302B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AB22E1F315B5C006302B6 /* AppDelegate.swift */; };
 		545AB2311F315B5C006302B6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AB2301F315B5C006302B6 /* SignInVC.swift */; };
 		545AB2341F315B5C006302B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 545AB2321F315B5C006302B6 /* Main.storyboard */; };
@@ -17,6 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5443EB611F339ECF00F8F99F /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		5443EB621F339ECF00F8F99F /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		5443EB631F339ECF00F8F99F /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		5443EB671F33C0FE00F8F99F /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		5443EB691F3409D300F8F99F /* RoundedTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTVC.swift; sourceTree = "<group>"; };
+		5443EB6B1F340B6600F8F99F /* NewPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		5443EB6D1F340CBF00F8F99F /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		5443EB711F340DDA00F8F99F /* TimelineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVC.swift; sourceTree = "<group>"; };
+		5443EB731F340E1200F8F99F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		545AB22B1F315B5C006302B6 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545AB22E1F315B5C006302B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		545AB2301F315B5C006302B6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -54,6 +72,7 @@
 		5443EB5D1F3180BC00F8F99F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5443EB731F340E1200F8F99F /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -61,6 +80,9 @@
 		5443EB5E1F3180CB00F8F99F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5443EB671F33C0FE00F8F99F /* RoundedButton.swift */,
+				5443EB691F3409D300F8F99F /* RoundedTVC.swift */,
+				5443EB6D1F340CBF00F8F99F /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -69,8 +91,20 @@
 			isa = PBXGroup;
 			children = (
 				545AB2301F315B5C006302B6 /* SignInVC.swift */,
+				5443EB6B1F340B6600F8F99F /* NewPostVC.swift */,
+				5443EB711F340DDA00F8F99F /* TimelineVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		5443EB601F339E5B00F8F99F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5443EB611F339ECF00F8F99F /* Comfortaa-Bold.ttf */,
+				5443EB621F339ECF00F8F99F /* Comfortaa-Light.ttf */,
+				5443EB631F339ECF00F8F99F /* Comfortaa-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		545AB2221F315B5C006302B6 = {
@@ -94,6 +128,7 @@
 		545AB22D1F315B5C006302B6 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				5443EB601F339E5B00F8F99F /* Resources */,
 				5443EB5F1F3180D000F8F99F /* Controller */,
 				5443EB5E1F3180CB00F8F99F /* View */,
 				5443EB5D1F3180BC00F8F99F /* Model */,
@@ -180,7 +215,10 @@
 			files = (
 				545AB2391F315B5C006302B6 /* LaunchScreen.storyboard in Resources */,
 				545AB2411F315CB1006302B6 /* GoogleService-Info.plist in Resources */,
+				5443EB641F339ECF00F8F99F /* Comfortaa-Bold.ttf in Resources */,
+				5443EB661F339ECF00F8F99F /* Comfortaa-Regular.ttf in Resources */,
 				545AB2361F315B5C006302B6 /* Assets.xcassets in Resources */,
+				5443EB651F339ECF00F8F99F /* Comfortaa-Light.ttf in Resources */,
 				545AB2341F315B5C006302B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5443EB721F340DDA00F8F99F /* TimelineVC.swift in Sources */,
 				545AB2311F315B5C006302B6 /* SignInVC.swift in Sources */,
+				5443EB6A1F3409D300F8F99F /* RoundedTVC.swift in Sources */,
+				5443EB741F340E1200F8F99F /* Post.swift in Sources */,
+				5443EB6C1F340B6600F8F99F /* NewPostVC.swift in Sources */,
+				5443EB681F33C0FE00F8F99F /* RoundedButton.swift in Sources */,
 				545AB22F1F315B5C006302B6 /* AppDelegate.swift in Sources */,
+				5443EB6E1F340CBF00F8F99F /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
