@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F6E12786DEA1832A296616D /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7485E117176CFAFDD47E8666 /* Pods_SocialMedia.framework */; };
+		543982211F3C36E200DD711F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543982201F3C36E200DD711F /* Constants.swift */; };
+		543982231F3C41D800DD711F /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543982221F3C41D800DD711F /* RoundedImage.swift */; };
 		5443EB641F339ECF00F8F99F /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5443EB611F339ECF00F8F99F /* Comfortaa-Bold.ttf */; };
 		5443EB651F339ECF00F8F99F /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5443EB621F339ECF00F8F99F /* Comfortaa-Light.ttf */; };
 		5443EB661F339ECF00F8F99F /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5443EB631F339ECF00F8F99F /* Comfortaa-Regular.ttf */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		543982201F3C36E200DD711F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		543982221F3C41D800DD711F /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		5443EB611F339ECF00F8F99F /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		5443EB621F339ECF00F8F99F /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		5443EB631F339ECF00F8F99F /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5439821F1F3C36C700DD711F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				543982201F3C36E200DD711F /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		5443EB5D1F3180BC00F8F99F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 				5443EB671F33C0FE00F8F99F /* RoundedButton.swift */,
 				5443EB691F3409D300F8F99F /* RoundedTVC.swift */,
 				5443EB6D1F340CBF00F8F99F /* PostCell.swift */,
+				543982221F3C41D800DD711F /* RoundedImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -129,6 +142,7 @@
 		545AB22D1F315B5C006302B6 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				5439821F1F3C36C700DD711F /* Util */,
 				5443EB751F34379E00F8F99F /* SocialMedia.entitlements */,
 				5443EB601F339E5B00F8F99F /* Resources */,
 				5443EB5F1F3180D000F8F99F /* Controller */,
@@ -292,7 +306,9 @@
 				5443EB6C1F340B6600F8F99F /* NewPostVC.swift in Sources */,
 				5443EB681F33C0FE00F8F99F /* RoundedButton.swift in Sources */,
 				545AB22F1F315B5C006302B6 /* AppDelegate.swift in Sources */,
+				543982231F3C41D800DD711F /* RoundedImage.swift in Sources */,
 				5443EB6E1F340CBF00F8F99F /* PostCell.swift in Sources */,
+				543982211F3C36E200DD711F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
