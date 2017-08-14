@@ -297,6 +297,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ZKB-HI-wb0" id="KEw-48-G0a"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="gQc-7g-NqL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2UG-FD-0M6" userLabel="First Responder" sceneMemberID="firstResponder"/>

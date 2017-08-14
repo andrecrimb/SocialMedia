@@ -34,7 +34,11 @@ class SignInVC: UIViewController {
         if let email = emailField.text, let password = passwordField.text{
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil{
-                    print("ANDRE: Email athenticate with firebase")
+                    print("ANDRE: Email athenticated with firebase")
+                    if let user = user{
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
+                    }
                 } else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error != nil{
@@ -42,7 +46,8 @@ class SignInVC: UIViewController {
                         } else{
                             print("ANDRE: Successfully authenticate with firebase using email and password")
                             if let user = user{
-                                self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                             }
                         }
                     })
@@ -59,12 +64,9 @@ class SignInVC: UIViewController {
             } else if result?.isCancelled == true {
                 print("ANDRE: user cancel authentication with facebook")
             } else{
-                
                 print("ANDRE: sucess to authenticate with facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                
                 self.firebaseAuth(credential)
-                
             }
         }
     }
@@ -76,14 +78,16 @@ class SignInVC: UIViewController {
             } else {
                 print("ANDRE: sucesss authenticate to firebase with facebook")
                 if let user = user{
-                   self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
                 
             }
         })
     }
 
-    func completeSignIn(id: String){
+    func completeSignIn(id: String, userData: Dictionary<String, String>){
+        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
         let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("ANDRE: Data saved in keychain - \(keyChainResult)")
         performSegue(withIdentifier: TO_TIMELINE, sender: nil)
