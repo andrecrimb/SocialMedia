@@ -268,18 +268,18 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="375" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXO-Km-crd">
-                                <rect key="frame" x="16" y="94" width="343" height="573"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="361" id="F0L-87-kah" customClass="PostCell" customModule="SocialMedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="361"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="361"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F0L-87-kah" id="WMx-vN-dcr">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="361"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="361"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Br9-Ih-2U1">
-                                                    <rect key="frame" x="0.0" y="8" width="343" height="345"/>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Br9-Ih-2U1">
+                                                    <rect key="frame" x="16" y="8" width="343" height="345"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-Sz-qsD">
                                                             <rect key="frame" x="16" y="10" width="311" height="54"/>
@@ -365,16 +365,18 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Br9-Ih-2U1" secondAttribute="trailing" id="X6p-fc-V7Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="Br9-Ih-2U1" secondAttribute="trailing" constant="16" id="X6p-fc-V7Z"/>
                                                 <constraint firstAttribute="bottom" secondItem="Br9-Ih-2U1" secondAttribute="bottom" constant="8" id="eY2-Dm-BwE"/>
                                                 <constraint firstItem="Br9-Ih-2U1" firstAttribute="top" secondItem="WMx-vN-dcr" secondAttribute="top" constant="8" id="nSl-bX-Qx9"/>
-                                                <constraint firstItem="Br9-Ih-2U1" firstAttribute="leading" secondItem="WMx-vN-dcr" secondAttribute="leading" id="yxO-2J-J4q"/>
+                                                <constraint firstItem="Br9-Ih-2U1" firstAttribute="leading" secondItem="WMx-vN-dcr" secondAttribute="leading" constant="16" id="yxO-2J-J4q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="RoundedCornerCell" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Rounded" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="heart" destination="GTc-hX-jFA" id="AFH-Ts-cGd"/>
@@ -390,11 +392,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.15055030580000001" green="0.27638196949999999" blue="0.27828520540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dXO-Km-crd" secondAttribute="trailing" constant="16" id="7mp-cH-zZw"/>
+                            <constraint firstAttribute="trailing" secondItem="dXO-Km-crd" secondAttribute="trailing" id="7mp-cH-zZw"/>
                             <constraint firstItem="dXO-Km-crd" firstAttribute="top" secondItem="wtQ-Ea-5nj" secondAttribute="bottom" constant="18" id="BjX-dd-ZvC"/>
                             <constraint firstItem="bNb-m9-5lI" firstAttribute="top" secondItem="dXO-Km-crd" secondAttribute="bottom" id="HLl-nE-9fJ"/>
                             <constraint firstItem="wtQ-Ea-5nj" firstAttribute="leading" secondItem="i6e-0g-CIP" secondAttribute="leading" constant="28" id="MGd-CP-IvX"/>
-                            <constraint firstItem="dXO-Km-crd" firstAttribute="leading" secondItem="i6e-0g-CIP" secondAttribute="leading" constant="16" id="Tam-49-a5D"/>
+                            <constraint firstItem="dXO-Km-crd" firstAttribute="leading" secondItem="i6e-0g-CIP" secondAttribute="leading" id="Tam-49-a5D"/>
                             <constraint firstItem="wtQ-Ea-5nj" firstAttribute="top" secondItem="0QD-Ji-nhZ" secondAttribute="bottom" constant="16" id="fam-HE-rAf"/>
                             <constraint firstAttribute="trailing" secondItem="wtQ-Ea-5nj" secondAttribute="trailing" constant="28" id="r6e-kN-0O4"/>
                         </constraints>
