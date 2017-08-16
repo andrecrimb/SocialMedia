@@ -24,5 +24,8 @@ class PostCell: UITableViewCell {
         
     }
     
+    func configureCell(post: Post){
+        
+    }
     
 }

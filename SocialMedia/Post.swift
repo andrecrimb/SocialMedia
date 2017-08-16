@@ -10,40 +10,59 @@ import Foundation
 
 class Post{
     
-    private var _userPicture: String!
-    private var _userName: String!
-    private var _postPicture: String!
-    private var _postDescription: String!
-    private var _likes: String!
+    private var _caption: String!
+    private var _imageUrl: String!
+    private var _postKey: String!
+    private var _likes: Int!
     
-    var userPicture: String{
-        if _userPicture == nil{
-            _userPicture = ""
+    var caption: String{
+        if _caption == nil{
+            _caption = ""
         }
-        return _userPicture
+        return _caption
     }
     
-    var userName: String{
-        if _userName == nil{
-            _userName = ""
+    var imageUrl: String{
+        if _imageUrl == nil{
+            _imageUrl = ""
         }
-        return _userName
+        return _imageUrl
     }
     
-    var postPicture: String{
-        if _postPicture == nil{
-            _postPicture = ""
+    var postKey: String{
+        if _postKey == nil{
+            _postKey = ""
         }
-        return _postPicture
+        return _postKey
     }
     
-    var postDescription: String{
-        if _postDescription == nil{
-            _postDescription = ""
+    var likes: Int{
+        if _likes == nil{
+            _likes = 0
         }
-        return _postDescription
+        return _likes
     }
     
+
+    
+    init(postKey: String, postData: Dictionary<String, AnyObject>){
+        self._postKey = postKey
+        
+        
+        if let caption = postData["caption"] as? String{
+            self._caption = caption
+        }
+        
+        if let imageUrl = postData["imageUrl"] as? String{
+            self._imageUrl = imageUrl
+        }
+        
+        if let likes = postData["likes"] as? Int{
+            self._likes = likes
+        }
+        
+        
+    }
     
     
 }

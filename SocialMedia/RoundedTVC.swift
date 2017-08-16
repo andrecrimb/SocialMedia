@@ -10,7 +10,7 @@ import UIKit
 
 private var rounded = false
 
-extension UITableViewCell {
+extension UIView {
 
     @IBInspectable var Rounded: Bool{
         get{
