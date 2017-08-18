@@ -17,6 +17,8 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var posts = [Post]()
     
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,8 +53,15 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell{
             let postCell = posts[indexPath.row]
-            cell.configureCell(post: postCell)
+            
+            if let img = TimelineVC.imageCache.object(forKey: postCell.imageUrl as NSString){
+                cell.configureCell(post: postCell, img: img)
+            } else{
+                cell.configureCell(post: postCell)
+            }
+            
             return cell
+            
         } else{
             return UITableViewCell()
         }

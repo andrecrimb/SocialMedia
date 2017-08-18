@@ -99,6 +99,13 @@ class SignInVC: UIViewController {
         }
         
     }
-
+    
+    
+    //This will hide the keyboard touching outside
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
