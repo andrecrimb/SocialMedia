@@ -112,15 +112,20 @@
                                     <constraint firstItem="jc0-z2-ikE" firstAttribute="leading" secondItem="XWR-OR-jgQ" secondAttribute="leading" id="U3A-vf-Bdd"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2BQ-E3-cnU">
+                                <rect key="frame" x="169" y="454" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83921568627450982" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2BQ-E3-cnU" firstAttribute="top" secondItem="vRh-jq-68t" secondAttribute="bottom" constant="22" id="2N0-aH-AaJ"/>
                             <constraint firstItem="Dmb-An-Gtc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="EU0-dL-8Cb"/>
                             <constraint firstItem="XWR-OR-jgQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="Eaq-Fr-KsZ"/>
                             <constraint firstAttribute="trailing" secondItem="Gn0-ex-Zxb" secondAttribute="trailing" id="JLf-xF-7QX"/>
                             <constraint firstItem="Gn0-ex-Zxb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PAh-Ey-6qW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XWR-OR-jgQ" secondAttribute="trailing" constant="50" id="PTF-9e-0Tv"/>
                             <constraint firstAttribute="trailing" secondItem="Dmb-An-Gtc" secondAttribute="trailing" constant="50" id="TXD-ZR-bra"/>
+                            <constraint firstItem="2BQ-E3-cnU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UTt-Li-R89"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dmb-An-Gtc" secondAttribute="bottom" constant="25" id="VDb-I3-fhh"/>
                             <constraint firstItem="XWR-OR-jgQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="biI-fR-XM7"/>
                             <constraint firstItem="Gn0-ex-Zxb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kXB-Fu-W4l"/>
@@ -130,6 +135,8 @@
                     <connections>
                         <outlet property="emailField" destination="FoH-2h-zCx" id="rlj-Aw-0I9"/>
                         <outlet property="passwordField" destination="arp-zR-nRa" id="vnY-sQ-5nh"/>
+                        <outlet property="signInBtn" destination="vRh-jq-68t" id="tee-tJ-Paj"/>
+                        <outlet property="spinner" destination="2BQ-E3-cnU" id="w8L-Fz-hdZ"/>
                         <segue destination="YVU-GP-VGb" kind="show" identifier="toTimeline" id="7eJ-Z2-NEc"/>
                     </connections>
                 </viewController>

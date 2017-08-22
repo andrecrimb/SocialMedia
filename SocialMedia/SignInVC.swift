@@ -16,10 +16,12 @@ class SignInVC: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var signInBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startAnimation(type: false)
     }
     //só é possivel realizar segues diretas no view didappear
     override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +33,7 @@ class SignInVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func entrarPress(_ sender: UIButton) {
+        startAnimation(type: true)
         if let email = emailField.text, let password = passwordField.text{
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil{
@@ -41,8 +44,16 @@ class SignInVC: UIViewController {
                     }
                 } else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                        
+                        self.startAnimation(type: false)
+                        
                         if error != nil{
+                            let alert = UIAlertController(title: "Ops..", message: "Unable to authenticate with email and password", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            
                             print("ANDRE: unable to authentica with firebase using email and password")
+                            
                         } else{
                             print("ANDRE: Successfully authenticate with firebase using email and password")
                             if let user = user{
@@ -57,9 +68,15 @@ class SignInVC: UIViewController {
     }
 
     @IBAction func facebookBtnPress(_ sender: UIButton) {
+        startAnimation(type: true)
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            self.startAnimation(type: false)
             if error != nil{
+                let alert = UIAlertController(title: "Ops..", message: "Unable to authenticate with facebook", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
                 print("ANDRE: unable to authenticate using facebook - \(String(describing: error))")
             } else if result?.isCancelled == true {
                 print("ANDRE: user cancel authentication with facebook")
@@ -74,6 +91,10 @@ class SignInVC: UIViewController {
     func firebaseAuth(_ credential: FIRAuthCredential){
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil{
+                let alert = UIAlertController(title: "Ops..", message: "Unable to authenticate with facebook, email already in use", preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 print("ANDRE: unable to authenticate to firebase using facebook - \(String(describing: error))")
             } else {
                 print("ANDRE: sucesss authenticate to firebase with facebook")
@@ -85,6 +106,7 @@ class SignInVC: UIViewController {
             }
         })
     }
+    
 
     func completeSignIn(id: String, userData: Dictionary<String, String>){
         DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
@@ -100,6 +122,21 @@ class SignInVC: UIViewController {
         
     }
     
+    func postToFirebase(imgUrl: String){
+        let post: Dictionary<String, AnyObject>
+    }
+    
+    func startAnimation(type: Bool){
+        self.view.endEditing(true)
+        if type {
+            self.spinner.startAnimating()
+            self.signInBtn.isEnabled = false
+        } else {
+            self.spinner.stopAnimating()
+            self.signInBtn.isEnabled = true
+        }
+        
+    }
     
     //This will hide the keyboard touching outside
     

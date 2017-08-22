@@ -71,8 +71,7 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let keyChainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("ANDRE: sign out keychain \(keyChainResult)")
         try! FIRAuth.auth()?.signOut()
-        dismiss(animated: true, completion: nil)
-        
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
     }
 
 }
