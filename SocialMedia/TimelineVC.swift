@@ -25,7 +25,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,5 +76,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: TO_LOGIN, sender: nil)
     }
+ 
 
 }

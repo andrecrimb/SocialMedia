@@ -171,7 +171,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-CW-KM9">
-                                        <rect key="frame" x="25" y="0.0" width="264" height="25"/>
+                                        <rect key="frame" x="25" y="0.0" width="239" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="R3X-BF-ZJ0"/>
                                             <constraint firstAttribute="width" constant="261.5" id="XNw-E1-xKT"/>
@@ -181,7 +181,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="R3r-91-ron">
-                                        <rect key="frame" x="289" y="0.0" width="0.0" height="25"/>
+                                        <rect key="frame" x="264" y="0.0" width="25" height="25"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw2-Ct-5q2">
                                         <rect key="frame" x="289" y="0.0" width="30" height="25"/>
@@ -324,8 +324,9 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-EZ-MO6">
+                                                        <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-EZ-MO6">
                                                             <rect key="frame" x="0.0" y="74" width="343" height="192"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="192" id="LQI-gx-1ZA"/>
                                                             </constraints>

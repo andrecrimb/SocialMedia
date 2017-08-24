@@ -21,6 +21,8 @@ class PostCell: UITableViewCell {
     
     var post: Post!
     var userLikeRef: FIRDatabaseReference!
+    var userNameRef: FIRDatabaseReference?
+    var userImageRef: FIRDatabaseReference?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,11 +38,16 @@ class PostCell: UITableViewCell {
     func configureCell(post: Post, img: UIImage? = nil){
         self.post = post
         userLikeRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        userImageRef = DataService.ds.REF_USER_CURRENT.child("profileImg")
+        userNameRef = DataService.ds.REF_USER_CURRENT.child("userName")
         
         postPic.image = UIImage(named: post.imageUrl)
         postDesc.text = post.caption
         heartCount.text = "\(post.likes)"
 
+        
+        
+        
         if img != nil{
             postPic.image = img
         } else{
@@ -86,7 +93,5 @@ class PostCell: UITableViewCell {
             }
         })
     }
-    
-   
     
 }

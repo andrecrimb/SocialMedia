@@ -73,13 +73,6 @@ class SignInVC: UIViewController {
             } else if result?.isCancelled == true {
                 print("ANDRE: user cancel authentication with facebook")
             } else{
-                
-                let teste = FBSDKAccessToken.current().userID!
-                
-                let facebookProfileUrl = "http://graph.facebook.com/\(teste)/picture?type=large"
-                
-                print("\n \(facebookProfileUrl) \n")
-                
                 print("ANDRE: sucess to authenticate with facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
@@ -95,8 +88,14 @@ class SignInVC: UIViewController {
             } else {
                 print("ANDRE: sucesss authenticate to firebase with facebook")
                 if let user = user{
-                    let userData = ["provider": credential.provider]
-                    self.completeSignIn(id: user.uid, userData: userData)
+                    let userData = [
+                        "provider": credential.provider,
+                        "profileImg": user.photoURL!.absoluteString,
+                        "userName": user.displayName
+                    ]
+                   
+                 //   let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData as! Dictionary<String, String>)
                 }
                 
             }
