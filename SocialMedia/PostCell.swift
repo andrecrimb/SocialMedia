@@ -19,25 +19,28 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var heart: UIImageView!
     @IBOutlet weak var heartCount: UILabel!
     
+    var post: Post!
+    var userLikeRef: FIRDatabaseReference!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
+        //cofiguring tapgesture recognizer
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        self.heart.addGestureRecognizer(tap)
+        self.heart.isUserInteractionEnabled = true
     }
     
     
     //the second parameter string is to check if there`s a image in cash to bring back, if not download from firebase
     func configureCell(post: Post, img: UIImage? = nil){
+        self.post = post
+        userLikeRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        
         postPic.image = UIImage(named: post.imageUrl)
         postDesc.text = post.caption
         heartCount.text = "\(post.likes)"
-        
-        if post.likes > 0{
-            heart.image = UIImage(named: "heart_fill")
-        } else{
-            heart.image = UIImage(named: "heart")
-        }
-        
+
         if img != nil{
             postPic.image = img
         } else{
@@ -60,7 +63,30 @@ class PostCell: UITableViewCell {
             })
             
         }
-        
+        userLikeRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull{
+                self.heart.image = UIImage(named: "heart")
+            } else{
+                self.heart.image = UIImage(named: "heart_fill")
+            }
+        })
     }
+    
+    
+    func likeTapped(sender: UITapGestureRecognizer){
+        userLikeRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull{
+                self.heart.image = UIImage(named: "heart_fill")
+                self.post.adjustLikes(addLike: true)
+                self.userLikeRef.setValue(true)
+            } else{
+                self.heart.image = UIImage(named: "heart")
+                self.post.adjustLikes(addLike: false)
+                self.userLikeRef.removeValue()
+            }
+        })
+    }
+    
+   
     
 }

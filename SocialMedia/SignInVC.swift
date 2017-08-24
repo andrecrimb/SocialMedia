@@ -44,16 +44,11 @@ class SignInVC: UIViewController {
                     }
                 } else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                        
                         self.startAnimation(type: false)
                         
                         if error != nil{
-                            let alert = UIAlertController(title: "Ops..", message: "Unable to authenticate with email and password", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                            
+                            self.customAlert(message: "Unable to authenticate with facebook")
                             print("ANDRE: unable to authentica with firebase using email and password")
-                            
                         } else{
                             print("ANDRE: Successfully authenticate with firebase using email and password")
                             if let user = user{
@@ -73,14 +68,18 @@ class SignInVC: UIViewController {
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             self.startAnimation(type: false)
             if error != nil{
-                let alert = UIAlertController(title: "Ops..", message: "Unable to authenticate with facebook", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-
+                self.customAlert(message: "Unable to authenticate with facebook")
                 print("ANDRE: unable to authenticate using facebook - \(String(describing: error))")
             } else if result?.isCancelled == true {
                 print("ANDRE: user cancel authentication with facebook")
             } else{
+                
+                let teste = FBSDKAccessToken.current().userID!
+                
+                let facebookProfileUrl = "http://graph.facebook.com/\(teste)/picture?type=large"
+                
+                print("\n \(facebookProfileUrl) \n")
+                
                 print("ANDRE: sucess to authenticate with facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
@@ -91,10 +90,7 @@ class SignInVC: UIViewController {
     func firebaseAuth(_ credential: FIRAuthCredential){
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil{
-                let alert = UIAlertController(title: "Ops..", message: "Unable to authenticate with facebook, email already in use", preferredStyle: UIAlertControllerStyle.alert)
-                
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self.customAlert(message: "Unable to authenticate with facebook, email already in use")
                 print("ANDRE: unable to authenticate to firebase using facebook - \(String(describing: error))")
             } else {
                 print("ANDRE: sucesss authenticate to firebase with facebook")
@@ -122,10 +118,6 @@ class SignInVC: UIViewController {
         
     }
     
-    func postToFirebase(imgUrl: String){
-        let post: Dictionary<String, AnyObject>
-    }
-    
     func startAnimation(type: Bool){
         self.view.endEditing(true)
         if type {
@@ -144,5 +136,11 @@ class SignInVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    func customAlert(message: String){
+        let alert = UIAlertController(title: "Ops..", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 

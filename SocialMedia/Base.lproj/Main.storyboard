@@ -172,10 +172,17 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-CW-KM9">
                                         <rect key="frame" x="25" y="0.0" width="264" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="R3X-BF-ZJ0"/>
+                                            <constraint firstAttribute="width" constant="261.5" id="XNw-E1-xKT"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="R3r-91-ron">
+                                        <rect key="frame" x="289" y="0.0" width="0.0" height="25"/>
+                                    </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw2-Ct-5q2">
                                         <rect key="frame" x="289" y="0.0" width="30" height="25"/>
                                         <constraints>
@@ -188,6 +195,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="R3r-91-ron" firstAttribute="top" secondItem="VYo-C0-0hm" secondAttribute="top" id="1O1-cZ-6q0"/>
+                                    <constraint firstItem="R3r-91-ron" firstAttribute="leading" secondItem="gZQ-CW-KM9" secondAttribute="trailing" id="eh1-Qf-nAc"/>
+                                    <constraint firstItem="hw2-Ct-5q2" firstAttribute="leading" secondItem="R3r-91-ron" secondAttribute="trailing" id="opM-Ly-zia"/>
+                                    <constraint firstAttribute="bottom" secondItem="R3r-91-ron" secondAttribute="bottom" id="yaC-Xr-64h"/>
+                                </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="preview_pic" translatesAutoresizingMaskIntoConstraints="NO" id="dZm-pC-CmV">
                                 <rect key="frame" x="0.0" y="88" width="375" height="200"/>
@@ -228,6 +241,8 @@
                     <connections>
                         <outlet property="imagePreview" destination="dZm-pC-CmV" id="mCH-Fj-ZAB"/>
                         <outlet property="postComment" destination="cTe-14-UNK" id="Mpg-uL-gbP"/>
+                        <outlet property="sendBtn" destination="hw2-Ct-5q2" id="A6m-rk-GpA"/>
+                        <outlet property="spinner" destination="R3r-91-ron" id="E22-Oo-iWN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvX-Zj-yUj" userLabel="First Responder" sceneMemberID="firstResponder"/>

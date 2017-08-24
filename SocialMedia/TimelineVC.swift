@@ -25,8 +25,13 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                self.posts.removeAll()
                 for snap in snapshot{
                     print("\(snap)")
                     if let dictPost = snap.value as? Dictionary<String, AnyObject>{
@@ -38,7 +43,6 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             self.tableView.reloadData()
         })
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,7 +56,7 @@ class TimelineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell{
-            let postCell = posts[indexPath.row]
+            let postCell = posts.reversed()[indexPath.row]
             
             if let img = TimelineVC.imageCache.object(forKey: postCell.imageUrl as NSString){
                 cell.configureCell(post: postCell, img: img)
